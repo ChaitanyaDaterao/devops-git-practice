@@ -1,3 +1,1 @@
-Hello Git
-Welcome to Devops
-Feature branch work
+Hello from main branch
