@@ -1,25 +1,24 @@
 name: CI Practice
 
-on:
+"on":
   push:
-
     branches:
       - main
-   pull_request:
 
+  pull_request:
     branches:
       - main
 
 jobs:
   tests:
-     runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-     steps:
-       - name: Checkout repository
-         uses: actions/checkout@v4
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-       - name: Run test
-         run: |
-           echo "GitHub Action is working"
-           echo "Repository: $GITHUB_REPOSITORY"
-           echo "Branch: $GITHUB_REF_NAME"
+      - name: Run test
+        run: |
+          echo "GitHub Actions is working"
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Branch: $GITHUB_REF_NAME"
