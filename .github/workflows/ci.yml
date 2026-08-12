@@ -19,5 +19,5 @@ jobs:
       - name: Run test
         run: |
           echo "Running CI test..."
-          grep "CI test is working" test.txt
+          grep "CI test is Working" test.txt
           echo "Test passed!"
