@@ -35,3 +35,10 @@ jobs:
         with:
           name: node-app-build
           path: dist/
+
+      - name: Use secret
+        env:
+          MY_SECRETE: ${{ secrets.MY_SECRETE }}
+        run: |
+          echo "Secret is available"
+          echo "Secret length: $ {#MY_SECRETE}"
