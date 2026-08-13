@@ -41,4 +41,23 @@ jobs:
           MY_SECRETE: ${{ secrets.MY_SECRETE }}
         run: |
           echo "Secret is available"
-          echo "Secret length: $ {#MY_SECRETE}"
+          echo "Secret length: ${#MY_SECRETE}"
+
+deploy:
+  needs: tests
+  runs-on: ubuntu-latest
+  environment: development
+
+  steps:
+    - name: Download build artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: node-app-build
+        path: dist/
+
+    - name: Deploy application
+      run: |
+         echo "Deploying application..."
+         echo "Environment: development"
+         ls -la dist/
+         echo "Deployment successful"
